@@ -1,0 +1,25 @@
+{
+  "name": "simplex",
+  "version": "0.0.1",
+  "description": "simple ci server",
+  "main": "server.js",
+  "dependencies": {
+      "kue": "~0.6.2"
+    , "hiredis": "~0.1.15"
+    , "redis": "~0.8.3"
+    , "mongoose": "~3.6.11"
+    , "request" : "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/GEverding/simplex.git"
+  },
+  "author": "GEverding",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "f3292f02cda2aeb5416c8b14dfb888003b95b171"
+}
