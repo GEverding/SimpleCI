@@ -1,0 +1,65 @@
+
+@tableAccent: #fafafa;
+
+
+.table-striped {
+  > tbody { 
+    > tr {
+      cursor: pointer;
+
+      > td{
+        padding: 10px;
+        border-left:0px none transparent !important;
+      }
+
+      &:hover {
+        > td,
+        > th {
+          background-color: darken(@tableAccent, 3%);
+        }
+      }
+
+    }
+  }
+}
+
+.table-borderless {
+  td, th {
+    border: 0;
+  }
+}
+
+.table-row-selected {
+  background-color: darken(@tableAccent, 3%) !important;
+}
+
+.table-row-zebra {
+  background-color: darken(@tableAccent, 1%);
+}
+
+table {
+
+  &.table {
+    //border: 1px solid #dddddd;
+  }
+
+  &.sortable {
+    > thead {
+
+      > tr {
+        background-color: white;
+
+        > th {
+          cursor: pointer;
+        }
+
+        > th {
+          &:hover {
+            background-color: darken(@tableAccent, 3%);
+          }
+        }
+
+      }
+    }
+  }
+}

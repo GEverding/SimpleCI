@@ -1,0 +1,8 @@
+{
+  "name": "simples",
+  "dependencies": {
+    "jb55/ap": "*",
+    "jb55/tablesort": "*",
+    "component/relative-date": "*"
+  }
+}

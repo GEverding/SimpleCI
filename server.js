@@ -1,36 +1,41 @@
 
-var express = require('express')
-  , app = express()
-  , server = require('http')
-  , redis = require('redis')
-  , mongose = require('mongoose')
-  , routes = require('./lib/routes')
-  , path = require('path')
-  , kue = require('kue');
+/**
+ * Module dependencies.
+ */
 
-var settings = {
-  git_path: "/home/geverding/dev/"
+var express = require('express')
+  , routes = require('./lib/routes')
+  , http = require('http')
+  , mongoose = require('mongoose')
+  , path = require('path')
+  , lessMiddleware = require('less-middleware');
+
+var app = express();
+
+mongoose.connect('mongodb://localhost/simplex')
+
+// all environments
+app.set('port', process.env.PORT || 3000);
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+app.use(lessMiddleware({
+  src: __dirname + '/public',
+  compress: true
+}));
+app.use(express.favicon());
+app.use(express.logger('dev'));
+app.use(express.bodyParser());
+app.use(express.methodOverride());
+app.use(app.router);
+app.use(express.static(path.join(__dirname, 'public')));
+
+// development only
+if ('development' == app.get('env')) {
+  app.use(express.errorHandler());
 }
 
-app.settings = settings
+routes.init(app)
 
-kue.redis.createClient = function() {
-  var client = redis.createClient(6378, "127.0.0.1");
-  return client;
-};
-
-var jobs = kue.createQueue();
-
-app.configure(function() {
-  app.use(express.bodyParser());
-  app.use(app.router);
-  app.use(express.logger('dev'));
-  app.use(express.basicAuth('foo', 'bar'));
-  app.use(kue.app);
+http.createServer(app).listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
 });
-
-
-routes.init(app, jobs);
-
-app.listen(5050);
-console.log("Express server listening on port %d in %s mode", 5050, app.settings.env);

@@ -32,3 +32,9 @@ results
 
 npm-debug.log
 node_modules
+
+components
+
+public/css/simplex.css
+public/js/component.js
+

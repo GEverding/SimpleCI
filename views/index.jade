@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  .navbar.navbar-inverse
+    .navbar-inner
+      .container-fluid
+        a.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+ 
+          <!-- Be sure to leave the brand out there if you want it shown -->
+        a.brand(href="/")= title
+    
+          <!-- Everything you want hidden at 940px or less, place within here -->
+        .nav-collapse.collapse
+          p.navbar-text.pull-right Login
+          ul.nav
+            li.active: a(href='/') Home
+            li: a(href='/builds') Builds
+
+  .container-fluid
+    .row-fluid
+      .span3
+        .sidebar-nav.well
+          ul.nav.nav-list
+            li.nav-header Navagation
+            li.active: a(href='/') Home
+            li: a(href='/builds') Builds
+      .span9
+        table#builds.table.table-striped.sortable
+          thead
+            tr
+              th #
+              th Project
+              th Commit
+              th Author
+              th Started At
+              th Completed At
+              th Status
+          tbody
+
+
+    
