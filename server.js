@@ -8,9 +8,17 @@ var express = require('express')
   , http = require('http')
   , mongoose = require('mongoose')
   , path = require('path')
+  , kue = require('kue')
+  , redis = require('redis')
   , lessMiddleware = require('less-middleware');
 
+
 var app = express();
+kue.redis.createClient = function() {
+  var client = redis.createClient(6378, '127.0.0.1');
+  return client;
+};
+var jobs = kue.createQueue()
 
 mongoose.connect('mongodb://localhost/simplex')
 
@@ -28,6 +36,7 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(kue.app)
 
 // development only
 if ('development' == app.get('env')) {
