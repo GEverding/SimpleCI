@@ -38,3 +38,6 @@ components
 public/css/simplex.css
 public/js/component.js
 
+workspace
+config.yaml
+test/*.json

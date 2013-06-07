@@ -10,10 +10,19 @@ var express = require('express')
   , path = require('path')
   , kue = require('kue')
   , redis = require('redis')
+  , workers = require('./jobs')
+  , yaml = require('libyaml')
   , lessMiddleware = require('less-middleware');
 
-
 var app = express();
+yaml.readFile('config.yaml', function(err, doc){
+  if(err){
+    console.error('Could not read config')
+  }
+  app.settings = doc
+});
+
+kue.app.set('title', 'Simplex');
 kue.redis.createClient = function() {
   var client = redis.createClient(6378, '127.0.0.1');
   return client;
@@ -43,7 +52,8 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-routes.init(app)
+routes.init(app,jobs)
+workers.init(jobs)
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
