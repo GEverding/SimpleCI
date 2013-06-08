@@ -19,10 +19,10 @@ yaml.readFile('config.yaml', function(err, doc){
   if(err){
     console.error('Could not read config')
   }
-  app.settings = doc
+  app.config = doc
 });
 
-kue.app.set('title', 'Simplex');
+kue.app.set('title', 'Simplex - Kue');
 kue.redis.createClient = function() {
   var client = redis.createClient(6378, '127.0.0.1');
   return client;
