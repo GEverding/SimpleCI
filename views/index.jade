@@ -19,29 +19,18 @@ block content
           ul.nav
             li.active: a(href='/') Home
             li: a(href='/builds') Builds
-            li: a(href='/active') Kue
 
   .container-fluid
     .row-fluid
-      .span3
-        .sidebar-nav.well
-          ul.nav.nav-list
-            li.nav-header Navagation
-            li.active: a(href='/') Home
-            li: a(href='/builds') Builds
-            li: a(href='/active') Kue
-      .span9
-        table#builds.table.table-striped.sortable
-          thead
-            tr
-              th #
-              th Project
-              th Commit
-              th Author
-              th Started At
-              th Completed At
-              th Status
-          tbody
+      table#builds.table.table-striped.sortable
+        thead
+          tr
+            th #
+            th Project
+            th Commit
+            th Author
+            th Started At
+            th Completed At
+            th Status
+        tbody
 
-
-    
