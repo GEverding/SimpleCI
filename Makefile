@@ -1,10 +1,20 @@
 
-all: components
-	@echo "Build Done"
+DATE=$(shell date +%I:%M%p)
+CHECK=\033[32m✔\033[39m
 
-components:
-	@echo "Building Components"
-	@component build --js -o public/js -f component.js
-	@echo "Components Built"
+all: build components
+	@echo "SimpleCI successfully built at $(DATE)"
 
-.PHONY: all components
+build:
+	@redo -j12 all
+	@echo "Compiling SimpleCI...          $(CHECK) Done"
+
+components: 
+	@component build --js -o public/js -f component.js > /dev/null
+	@echo "Compiling Components...        $(CHECK) Done"
+
+clean:
+	@redo clean
+
+
+.PHONY: all build components
