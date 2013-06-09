@@ -33,7 +33,7 @@ mongoose.connect('mongodb://localhost/simplex')
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-app.use(lessMiddleware({
+app.use(require('less-middleware')({
   src: __dirname + '/public',
   compress: true
 }));

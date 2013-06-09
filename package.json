@@ -4,11 +4,19 @@
   "description": "simple ci server",
   "main": "server.js",
   "dependencies": {
-      "kue": "~0.6.2"
+      "express": "3.x"
+    , "jade": "*"
     , "hiredis": "~0.1.15"
     , "redis": "~0.8.3"
     , "mongoose": "~3.6.11"
-    , "request" : "*"
+    , "zmq": "2.4.x"
+    , "cluster": "*"
+    , "connect": "2.7.x"
+    , "less-middleware": "*"
+    , "winston": "0.7.x"
+    , "xmldoc": "*"
+    , "underscore": "1.4.x"
+    , "libyaml": "*"
   },
   "devDependencies": {},
   "scripts": {
