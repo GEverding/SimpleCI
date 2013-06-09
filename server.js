@@ -20,13 +20,6 @@ yaml.readFile('config.yaml', function(err, doc){
   app.config = doc
 });
 
-kue.app.set('title', 'Simplex - Kue');
-kue.redis.createClient = function() {
-  var client = redis.createClient(6378, '127.0.0.1');
-  return client;
-};
-var jobs = kue.createQueue()
-
 mongoose.connect('mongodb://localhost/simplex')
 
 // all environments
