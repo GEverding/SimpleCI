@@ -7,7 +7,7 @@ Build = require('../models/build')
 
 body = require('connect').bodyParser()
 
-indexCtrl = (app,jobs) ->
+indexCtrl = (app) ->
 
   app.get('/', (req, res) ->
     res.render("index", {title: "Simplex" })
@@ -20,12 +20,12 @@ indexCtrl = (app,jobs) ->
     q.exec((err, build) ->
       console.log (build)
       if build? then num = build.buildNumber+1 else num = 0
-      jobs.create('build', {
-        title: 'Build #'+num,
-        settings: app.config,
-        body: body,
-        buildNum: num
-      }).save()
+      #jobs.create('build', {
+        #title: 'Build #'+num,
+        #settings: app.config,
+        #body: body,
+        #buildNum: num
+      #}).save()
       res.json(200, 'recieved')
     )
   )
@@ -61,5 +61,5 @@ indexCtrl = (app,jobs) ->
   )
 
 
-module.exports.init = (app,jobs) ->
-  indexCtrl(app,jobs)
+module.exports.init = (app) ->
+  indexCtrl(app)

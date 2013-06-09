@@ -5,10 +5,8 @@ http = require 'http'
 mongoose = require 'mongoose'
 path = require 'path'
 redis = require 'redis'
-workers = require './jobs'
 yaml = require 'libyaml'
 less = require 'less-middleware'
-kue = require 'kue'
 
 app = express()
 
@@ -40,8 +38,8 @@ if 'development' is app.get('env')
     handleUncaughtExceptions:no
   app.use(express.errorHandler())
 
-routes.init(app,jobs)
-workers.init(jobs)
+routes.init(app)
+#workers.init(jobs)
 
 http.createServer(app).listen app.get('port'), ->
   console.log('Express server listening on port ', app.get('port'))
