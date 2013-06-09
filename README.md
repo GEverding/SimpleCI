@@ -1,4 +1,2 @@
-simplex
-=======
+# SimpleCI - WIP
 
-simple node/karma build server

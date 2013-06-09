@@ -1,7 +1,7 @@
 {
-  "name": "simplex",
+  "name": "SimpleCI",
   "version": "0.0.1",
-  "description": "simple ci server",
+  "description": "Simple CI server built with node.js",
   "main": "server.js",
   "dependencies": {
       "express": "3.x"
@@ -24,10 +24,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/GEverding/simplex.git"
+    "url": "git://github.com/GEverding/SimpleCi.git"
   },
   "author": "GEverding",
-  "license": "BSD",
   "readmeFilename": "README.md",
   "gitHead": "f3292f02cda2aeb5416c8b14dfb888003b95b171"
 }
