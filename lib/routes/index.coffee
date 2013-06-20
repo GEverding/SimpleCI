@@ -7,6 +7,10 @@ Build = require('../models/build')
 
 body = require('connect').bodyParser()
 
+ctrls = [
+  'project'
+]
+
 indexCtrl = (app) ->
 
   app.get('/', (req, res) ->
@@ -63,3 +67,7 @@ indexCtrl = (app) ->
 
 module.exports.init = (app) ->
   indexCtrl(app)
+
+  for ctrl in ctrls
+    require("../models/#{ctrl}")(app)
+
