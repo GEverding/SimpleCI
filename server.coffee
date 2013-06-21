@@ -8,7 +8,14 @@ redis    = require 'redis'
 yaml     = require 'libyaml'
 less     = require 'less-middleware'
 logger   = require './lib/logger'
+Queue    = require './lib/queue'
 
+queue = new Queue()
+queue.createQueue()
+queue.on 'connected', (data) ->
+  logger.info 'Connected to Queue'
+queue.on 'error', (err) ->
+  logger.error "queue error: #{err}"
 
 app = express()
 
