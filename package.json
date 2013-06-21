@@ -4,19 +4,22 @@
   "description": "Simple CI server built with node.js",
   "main": "server.js",
   "dependencies": {
-      "express": "3.x"
-    , "jade": "*"
-    , "hiredis": "~0.1.15"
-    , "redis": "~0.8.3"
-    , "mongoose": "~3.6.11"
-    , "zmq": "2.4.x"
-    , "cluster": "*"
-    , "connect": "2.7.x"
-    , "less-middleware": "*"
-    , "winston": "0.7.x"
-    , "xmldoc": "*"
-    , "underscore": "1.4.x"
-    , "libyaml": "*"
+    "express": "3.x",
+    "jade": "*",
+    "hiredis": "~0.1.15",
+    "redis": "~0.8.3",
+    "mongoose": "~3.6.11",
+    "zmq": "2.4.x",
+    "cluster": "*",
+    "connect": "2.7.x",
+    "less-middleware": "*",
+    "winston": "~0.7.x",
+    "xmldoc": "*",
+    "underscore": "1.4.x",
+    "libyaml": "*",
+    "winston-mongodb": "~0.4.x",
+    "source-map-support": "*",
+    "mongodb": "*"
   },
   "devDependencies": {},
   "scripts": {

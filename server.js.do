@@ -1,2 +1,2 @@
-redo-ifchange app.coffee
-coffee -cs < app.coffee > $3
+redo-ifchange server.coffee
+coffee -cs < server.coffee > $3
