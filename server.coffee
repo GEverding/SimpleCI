@@ -24,7 +24,7 @@ yaml.readFile 'config.yaml', (err, doc) ->
     console.error 'Could not read config'
   app.config = doc
 
-mongoose.connect 'mongodb://localhost/simplex'
+mongoose.connect 'mongodb://localhost/simpleci'
 
 #all environments
 app.set('port', process.env.PORT or 3000)
