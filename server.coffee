@@ -1,12 +1,14 @@
 
-express = require 'express'
-routes = require './lib/routes'
-http = require 'http'
+express  = require 'express'
+routes   = require './lib/routes'
+http     = require 'http'
 mongoose = require 'mongoose'
-path = require 'path'
-redis = require 'redis'
-yaml = require 'libyaml'
-less = require 'less-middleware'
+path     = require 'path'
+redis    = require 'redis'
+yaml     = require 'libyaml'
+less     = require 'less-middleware'
+logger   = require './lib/logger'
+
 
 app = express()
 
