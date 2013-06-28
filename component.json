@@ -14,5 +14,6 @@
       "app"
     , "dashboard"
     , "render"
+    , "util"
   ]
 }

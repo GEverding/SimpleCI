@@ -16,7 +16,8 @@
   "paths": [
   ],
   "local": [
-    "render"
+      "render"
+    , "util"
   ],
   "scripts": [
     "templates.js",

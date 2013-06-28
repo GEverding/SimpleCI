@@ -1,5 +1,6 @@
 collection = require 'collection'
-render = require 'render'
+render     = require 'render'
+util       = require 'util'
 
 mkDashboardView = (config={}) ->
   v = bQuery.view()
@@ -11,6 +12,8 @@ mkDashboardView = (config={}) ->
     template: require('../../templates').dashboard
     model: -> {build: 'hi'}
     raw:yes
+
+  v.use util
 
   v.make()
 
