@@ -55,3 +55,8 @@ lib/models/*.map
 lib/routes/*.map
 lib/jobs/*.map
 
+client/js/component.js
+client/js/simpleci.js
+client/js/bQuery.js
+
+client/css/simpleci.css
