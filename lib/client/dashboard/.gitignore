@@ -1,0 +1,4 @@
+*.js
+lib/*.js
+lib/views/*.js
+templates/*.js
