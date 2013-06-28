@@ -19,9 +19,11 @@
     "libyaml": "*",
     "winston-mongodb": "~0.4.x",
     "source-map-support": "*",
+    "async": "*",
     "mongodb": "*"
   },
-  "devDependencies": {},
+  "devDependencies": {
+  },
   "scripts": {
     "start": "node server.js"
   },
