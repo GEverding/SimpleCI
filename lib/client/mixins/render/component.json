@@ -1,0 +1,16 @@
+{
+  "name": "render",
+  "repo": "SimpleCi/render",
+  "description": "Render boilerplate component for bquery/backbone",
+  "version": "0.0.1",
+  "keywords": ["bquery", "mixin", "render", "backbone"],
+  "dependencies": {
+    "jb55/ap": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}

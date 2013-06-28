@@ -2,7 +2,7 @@
 DATE=$(shell date +%I:%M%p)
 CHECK=\033[32m✔\033[39m
 
-all: build components
+all: build
 	@echo "SimpleCI successfully built at $(DATE)"
 
 build:

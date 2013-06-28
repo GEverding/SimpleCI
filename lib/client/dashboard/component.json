@@ -1,0 +1,29 @@
+{
+  "name": "dashboard",
+  "repo": "SimpleCI/dashboard",
+  "description": "",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "jb55/tablesort": "*",
+    "monstercat/jade-runtime": "*",
+    "component/querystring": "*",
+    "bquery/collection": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "lib/index.js",
+  "paths": [
+  ],
+  "local": [
+    "render"
+  ],
+  "scripts": [
+    "templates.js",
+    "lib/index.js",
+    "lib/model.js",
+    "lib/collection.js",
+    "lib/views/dashboard.js",
+    "templates/dashboard.js"
+  ]
+}

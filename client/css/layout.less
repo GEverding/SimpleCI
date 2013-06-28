@@ -1,0 +1,139 @@
+
+@navBg: #222;
+
+/* Add transition to containers so they can push in and out */
+#layout, #nav, .pure-menu-link {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+#layout {
+  padding-left: 150px;
+  left:0;
+}
+
+#main {
+  width: 100%;
+}
+.content {
+  margin: 0 auto;
+  padding: 1em;
+  width: 90%;
+  margin-bottom: 50px;
+}
+
+#nav {
+  margin-left: -150px; /* "#nav" width */
+  width: 150px;
+  position: fixed;
+  top: 0;
+  left: 150px;
+  bottom: 0;
+  z-index: 1000; /* so the menu or its navicon stays above all content */
+  background: @navBg;
+  overflow-y: auto;
+  -webkit-overflow-scroll: touch;
+}
+
+.pure-menu {
+  font-weight: lighter;
+
+  .pure-menu-heading {
+      padding-top: 30px;
+      padding-bottom:20px;
+      font-size: 110%;
+      color: #fff;
+    }
+  .pure-menu-heading:hover,
+  .pure-menu-heading:focus {
+    color: #999;
+  }
+
+  &.pure-menu-blackbg {
+    background: @navBg;
+    .pure-menu-heading:hover {
+        color: #efefef;
+    }
+    a {
+      color: #fff;
+      border:none;
+
+      &:hover {
+          background: #666;
+      }
+    }
+
+    ul {
+      border:none;
+    }
+
+    .pure-menu-selected a {
+        background: #1f8dd6;
+    }
+
+    .pure-menu-selected a:hover {
+        color: #efefef;
+    }
+  }
+  &.pure-menu-horizontal {
+    height: 40px;
+  }
+
+
+  &.pure-menu-open {
+    border:none;
+  }
+}
+
+.pure-menu-link {
+  display: none; /* show this only on small screens */
+  top: 0;
+  left: 150px; /* "#menu width" */
+  background: #000;
+  background: rgba(0,0,0,0.7);
+  padding: 0.75em 1em;
+  &:hover, &focus {
+    background: #000;
+  }
+}
+
+
+@media (max-width: 870px) {
+  /* Navigation Push Styles */
+  #layout {
+    position: relative;
+    padding-left: 0;
+    &.active {
+      position: relative;
+      left: 150px;
+      #nav {
+        left: 150px;
+        width: 150px;
+      }
+      .pure-menu-link {
+        left: 150px;
+      }
+    }
+  }
+
+  #nav {
+    left: 0;
+  }
+
+  .pure-menu-link {
+    position: fixed;
+    left: 0;
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .content {
+    width: 95%;
+    font-size: 75%;
+    padding: 5px;
+  }
+}
