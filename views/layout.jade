@@ -3,31 +3,18 @@ html
   head
     title= title
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
-    link(rel='stylesheet', href='/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/css/simplex.css')
-    script(type='text/javascript', src='/js/component.js')
-    script(type='text/javascript', src='/js/underscore-min.js')
-    script(type='text/javascript', src='/js/simplex.js')
+    link(rel='stylesheet', href='//yui.yahooapis.com/pure/0.2.0/pure-min.css')
+    link(rel='stylesheet', href='/css/simpleci.css')
     script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js')
+    script(type='text/javascript', src='/js/simpleci.js')
     script(type='text/javascript')
       $(document).ready(function(){
-        getBuilds(function(err, rows){
-
-          var done = _.after(rows.length, tableBuilt)
-          rows = _(rows).sortBy(function(row){
-            return row.buildNumber
-          });
-          console.log(rows)
-
-          $buildsBody = $('#builds > tbody')
-          _(rows).each(function(row) {
-            html = buildRow(row)
-            console.log(row)
-            $buildsBody.append(html)
-            done()
-          })
-        });
+        var App = require('app')
+        var app = new App.app()
+        Backbone.history.start({pushState: false})
+        if(!Backbone.history.fragment){
+          app.dashboard()
+        }
       });
   body
     block content
