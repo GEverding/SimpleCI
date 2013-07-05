@@ -37,6 +37,7 @@ class Queue extends EventEmitter
     Project.findById job.projectId, (err,project) ->
 
 
+
 module.exports = Queue
 
 

@@ -1,8 +1,9 @@
 
-cluster = require('cluster')
-zmq = require('zmq')
-port = 'tcp://127.0.0.1:12345'
-project = require('./lib/models/projects')
+cluster = require 'cluster'
+zmq     = require 'zmq'
+
+port    = 'tcp://127.0.0.1:12345'
+project = require './lib/models/projects'
 
 if cluster.isMaster
   for i in [0..2]

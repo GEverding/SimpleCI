@@ -34,7 +34,7 @@ indexCtrl = (app) ->
     )
   )
 
-  app.get('/populateBuilds', (req,res) ->
+  app.get '/populateBuilds', (req,res) ->
     ret = (msg) ->
       res.json(200, msg)
 
