@@ -13,7 +13,7 @@ mkDashboardView = (config={}) ->
     model: -> {build: 'hi'}
     raw:yes
 
-  v.use util
+  v.use util()
 
   v.make()
 
