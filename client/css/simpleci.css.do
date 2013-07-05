@@ -1,6 +1,9 @@
 
 LESS="simpleci.less
+lesshat.less
 fonts.less
+label.less
+table.less
 layout.less"
 
 #CSS=""
