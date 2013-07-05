@@ -1,26 +1,27 @@
 dashboard = require 'dashboard'
+job = require 'job'
 
 class App extends Backbone.Router
   routes:
     "": "dashboard"
     "dashboard": "dashboard"
+    "jobs": "jobs"
 
   initialize: (opts={}) ->
-    @currentView = {}
+    #@currentView = {}
     @views = {}
 
   activateTab: ($tab) ->
-    console.log $tab
     $tab.addClass("pure-menu-selected")
     $tab.siblings().removeClass("pure-menu-selected")
 
   changeView: (newview) ->
-    @currentview.hide() if @currentview?
+    @currentView.hide() if @currentView?
+    @currentView = newview
     newview.show()
-    @currentview = newview
+    @
 
   page: (opts) ->
-    console.log opts
     if opts?
       config =
         app: @
@@ -33,12 +34,13 @@ class App extends Backbone.Router
           success: =>
             collection.trigger 'fetched'
 
-      view = @views[opts.name] = opts.view config
+      view = @views[opts.name] ?= opts.view config
+      console.log view
 
       view.on 'navigate', (place, opt) =>
         @navigate place, opt
 
-      #@changeView(view)
+      @changeView(view)
 
   pages:
     dashboard:
@@ -47,14 +49,23 @@ class App extends Backbone.Router
       collection: (opts) -> new dashboard.collection null, opts
       view: (opts) ->
         DashboardView = dashboard.views.dashboard opts
-        console.log DashboardView
         opts.el = opts.el ? '#dashboard'
         view = new DashboardView opts
         view.render()
         view
+    jobs:
+      tag: '#jobBtn'
+      name: 'jobs'
+      collection: (opts) -> new job.collection null, opts
+      view: (opts) ->
+        JobsView = job.views.jobs opts
+        opts.el = opts.el ? '#jobs'
+        view = new JobsView opts
+        view.render()
+        view
 
   dashboard: -> @go 'dashboard'
-  #project: -> @go 'projects'
+  jobs: -> @go 'jobs'
 
   go: (view) -> @page @pages[view]
 

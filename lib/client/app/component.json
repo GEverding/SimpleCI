@@ -9,7 +9,8 @@
   "license": "MIT",
   "main": "index.js",
   "local": [
-    "dashboard"
+      "dashboard"
+    , "job"
   ],
   "scripts": [
       "index.js"
