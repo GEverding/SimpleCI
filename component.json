@@ -13,6 +13,7 @@
   "local": [
       "app"
     , "dashboard"
+    , "job"
     , "render"
     , "util"
   ]
