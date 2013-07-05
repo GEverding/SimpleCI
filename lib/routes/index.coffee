@@ -54,15 +54,11 @@ indexCtrl = (app) ->
       ).save()
       done('completed')
 
-  )
-
-  app.get('/builds', body, (req, res) ->
-    Build.find((err, builds) ->
+  app.get '/jobs', body, (req, res) ->
+    Build.find (err, builds) ->
       #console.log(builds)
-      builds = _(builds).map (b) -> return b.toObject()
+      builds = _(builds).map (b) -> b.toObject()
       res.json(200, builds)
-    )
-  )
 
 
 module.exports.init = (app) ->
