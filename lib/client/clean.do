@@ -1,1 +1,1 @@
-redo app/clean project/clean dashboard/clean mixins/all
+redo app/clean job/clean dashboard/clean mixins/all

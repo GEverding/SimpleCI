@@ -1,1 +1,1 @@
-redo-ifchange app/all dashboard/all project/all mixins/all
+redo-ifchange app/all dashboard/all job/all mixins/all
