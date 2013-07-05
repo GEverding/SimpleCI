@@ -1,0 +1,33 @@
+{
+  "name": "job",
+  "repo": "SimpleCI/job",
+  "description": "",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "jb55/tablesort": "*",
+    "monstercat/jade-runtime": "*",
+    "component/querystring": "*",
+    "bquery/collection": "*",
+    "component/relative-date": "*",
+    "samsonjs/strftime": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "local": [
+    "render",
+    "util"
+  ],
+  "scripts": [
+    "index.js",
+    "templates.js",
+    "lib/model.js",
+    "lib/collection.js",
+    "lib/views/job.js",
+    "lib/views/jobs.js",
+    "lib/views/job.js",
+    "templates/job.js",
+    "templates/jobs.js"
+  ]
+}
