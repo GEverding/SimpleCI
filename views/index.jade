@@ -10,14 +10,28 @@ block content
         .pure-menu.pure-menu-open.pure-menu-blackbg
           a.pure-menu-heading(href='#') SimpleCI
           ul
-            li#dashboardBtn.pure-menu-seleted: a(href="/") Dashboard
-            li#projectBtn: a(href='#projects') Projects
+            li#dashboardBtn.pure-menu-seleted
+              a(href="#dashboard")
+                .pure-g
+                  i.icon-dashboard.icon-fixed-width.icon-4x.nav-icon
+                .nav-label Dashboard
+            li#jobBtn
+              a(href='#jobs')
+                .pure-g
+                  i.icon-cog.icon-fixed-width.icon-4x.nav-icon
+                .nav-label Jobs
+            li#projectBtn
+              a(href='#projects')
+                .pure-g
+                  i.icon-wrench.icon-fixed-width.icon-4x.nav-icon
+                .nav-label Projects
 
     header
       .pure-menu.pure-menu-open.pure-menu-horizontal.pure-menu-blackbg
     .pure-u#main
       .content.pure-u-1
         #dashboard
+        #jobs
 
   append scripts
     script(type='text/javascript')
