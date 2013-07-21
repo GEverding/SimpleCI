@@ -8,28 +8,26 @@ block content
     .pure-u#nav
       nav
         .pure-menu.pure-menu-open.pure-menu-blackbg
-          a.pure-menu-heading(href='#') SimpleCI
+          a.pure-menu-heading(href='#') <strong>Simple</strong>CI
           ul
             li#dashboardBtn.pure-menu-seleted
               a(href="#dashboard")
-                .pure-g
-                  i.icon-dashboard.icon-fixed-width.icon-4x.nav-icon
-                .nav-label Dashboard
+                i.icon-bar-chart.icon-fixed-width.nav-icon
+                | Dashboard
             li#jobBtn
               a(href='#jobs')
-                .pure-g
-                  i.icon-cog.icon-fixed-width.icon-4x.nav-icon
-                .nav-label Jobs
+                i.icon-cog.icon-fixed-width.nav-icon
+                | Jobs
             li#projectBtn
               a(href='#projects')
-                .pure-g
-                  i.icon-wrench.icon-fixed-width.icon-4x.nav-icon
-                .nav-label Projects
+                i.icon-wrench.icon-fixed-width.nav-icon
+                | Projects
 
     .pure-u#main
-      .content.pure-u-1
-        #dashboard
-        #jobs
+      .content
+        .pure-u-1
+          #dashboard
+          #jobs
 
   append scripts
     script(type='text/javascript')
