@@ -41,10 +41,11 @@ app.use(express.methodOverride())
 app.use(app.router)
 app.use(express.static(path.join(__dirname, 'public')))
 
+require('source-map-support').install
+  handleUncaughtExceptions:no
+
 # development only
 if 'development' is app.get('env')
-  require('source-map-support').install
-    handleUncaughtExceptions:no
   app.use(express.errorHandler())
 
 routes.init(app)
