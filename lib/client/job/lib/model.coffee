@@ -9,9 +9,9 @@ class Job extends Backbone.Model
   url: '/job'
 
   getStart: ->
-    formatter('%H:%M:%S on %B %d, %Y',new Date @get('createdOn'))
+    formatter('%B %d, %Y @ %H:%M:%S',new Date @get('createdOn'))
 
   getComplete: ->
-    formatter('%H:%M:%S on %B %d, %Y', new Date @get('completedOn'))
+    formatter('%B %d, %Y @ %H:%M:%S', new Date @get('completedOn'))
 
 module.exports = Job
