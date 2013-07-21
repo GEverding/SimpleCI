@@ -1,5 +1,6 @@
 
-@navBg: #222;
+@navBg: #383e4b;
+@navBgSel: #2d323d;
 
 /* Add transition to containers so they can push in and out */
 #layout, #nav, .pure-menu-link {
@@ -27,35 +28,38 @@
 }
 
 #nav {
-  margin-left: -150px; /* "#nav" width */
-  width: 150px;
+  margin-left: -175px; /* "#nav" width */
+  width: 175px;
   position: fixed;
   top: 0;
-  left: 150px;
+  left: 175px;
   bottom: 0;
   z-index: 1000; /* so the menu or its navicon stays above all content */
   background: @navBg;
   overflow-y: auto;
   -webkit-overflow-scroll: touch;
 }
+
 .nav-icon {
-  display:block;
-  margin-left: auto;
-  margin-right: auto;
+  /*display:block;*/
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
 }
+
 .nav-label {
-  text-align:center;
+  /*text-align:center;*/
 }
 
 .pure-menu {
   font-weight: lighter;
 
   .pure-menu-heading {
-      padding-top: 30px;
-      padding-bottom:20px;
-      font-size: 110%;
-      color: #fff;
-    }
+    padding-top: 30px;
+    padding-bottom:20px;
+    font-size: 110%;
+    color: #fff;
+  }
+
   .pure-menu-heading:hover,
   .pure-menu-heading:focus {
     color: #999;
@@ -71,7 +75,7 @@
       border:none;
 
       &:hover {
-          background: #666;
+        background: #666;
       }
     }
 
@@ -80,11 +84,11 @@
     }
 
     .pure-menu-selected a {
-        background: #1f8dd6;
+        background: @navBgSel;
     }
 
-    .pure-menu-selected a:hover {
-        color: #efefef;
+    .pure-menu-selected:hover {
+        color: @navBgSel;
     }
   }
   &.pure-menu-horizontal {
@@ -100,12 +104,35 @@
 .pure-menu-link {
   display: none; /* show this only on small screens */
   top: 0;
-  left: 150px; /* "#menu width" */
+  left: 175px; /* "#menu width" */
   background: #000;
   background: rgba(0,0,0,0.7);
   padding: 0.75em 1em;
   &:hover, &focus {
     background: #000;
+  }
+}
+
+.header {
+  background: #36a9e1;
+  color: white;
+  font-size: 16px;
+  overflow:hidden;
+  margin-bottom:3px; 
+
+  .header-title {
+    float: left;
+    padding: 5px 0;
+    margin: 0 0 0 20px;
+    i {
+      background: #1e8fc6;
+      color: #fff;
+      padding: 10px 0;
+      width: 36px;
+      display: inline-block;
+      text-align:center;
+      margin: -10px 20px -10px -20px;
+    }
   }
 }
 
@@ -117,13 +144,13 @@
     padding-left: 0;
     &.active {
       position: relative;
-      left: 150px;
+      left: 175px;
       #nav {
-        left: 150px;
-        width: 150px;
+        left: 175px;
+        width: 175px;
       }
       .pure-menu-link {
-        left: 150px;
+        left: 175px;
       }
     }
   }
