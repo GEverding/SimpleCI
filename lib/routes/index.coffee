@@ -14,7 +14,7 @@ ctrls = [
 indexCtrl = (app) ->
 
   app.get('/', (req, res) ->
-    res.render("index", {title: "Simplex" })
+    res.render("index", {title: "SimpleCI" })
   )
 
   app.post('/trigger', body, (req, res) ->
