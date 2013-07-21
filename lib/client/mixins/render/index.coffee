@@ -8,6 +8,7 @@ module.exports = (opts) ->
 
       go = (html) =>
         @$el.html(html)
+        @trigger 'render'
         cb?(@)
 
       d = {}
